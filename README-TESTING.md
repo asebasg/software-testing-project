@@ -2,8 +2,8 @@
 
 ## JavaScript/TypeScript (Jest)
 
-**Archivo**: `tests/math.test.ts`  
-**Ejecutar**: `npm test` o `jest`
+**Archivo**: `tests/math.test.ts`, `tests/factorial.test.ts`  
+**Ejecutar**: `npx jest`
 
 ```javascript
 // Importar la función a probar
@@ -22,7 +22,8 @@ describe("sum", () => {
 ## Python (unittest)
 
 **Archivo**: `tests/factorial_unittest.py`  
-**Ejecutar**: `python -m unittest discover -s tests`
+**Ejecutar**: `py -m unittest tests/factorial_unittest.py -v`
+**Ejectutar con error**: `py tests/factorial.test.py` (con errores intencionales)
 
 ```python
 import unittest
@@ -39,7 +40,8 @@ class TestFactorial(unittest.TestCase):
 ## Python (pytest)
 
 **Archivo**: `tests/factorial_pytest.py`  
-**Ejecutar**: `pytest tests/ -v`
+**Ejecutar**: `py -m pytest tests/factorial_pytest.py -v`
+**Ejectutar con error**: `py -m pytest tests/factorial.test.py -v` (con errores intencionales)
 
 ```python
 import pytest
@@ -75,18 +77,16 @@ java -cp ".;bin;path/to/junit.jar" org.junit.runner.JUnitCore FactorialTest
 
 ```bash
 # unittest
-python -m unittest discover -s tests
+py -m unittest tests/factorial_unittest.py -v
 
 # pytest
-pytest tests/ -v
+py -m pytest tests/factorial_pytest.py -v
 ```
 
 ### JavaScript/TypeScript
 
 ```bash
-npm test
-# o
-jest
+npx jest
 ```
 
 ### Java

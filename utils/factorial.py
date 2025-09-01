@@ -6,6 +6,8 @@ def factorial(n):
     Returns:
         int: Factorial del número, o -1 si es negativo
     """
+    if not isinstance(n, int):
+        raise TypeError("El argumento debe ser un entero")
     if n < 0:
         return -1  # Factorial no definido para números negativos
     if n == 0:
