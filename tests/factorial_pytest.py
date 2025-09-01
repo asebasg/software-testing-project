@@ -1,4 +1,6 @@
 import pytest
+import sys
+sys.path.append('.')
 from utils.factorial import factorial
 
 def test_factorial_zero():

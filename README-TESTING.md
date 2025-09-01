@@ -2,7 +2,7 @@
 
 ## JavaScript/TypeScript (Jest)
 
-**Archivo**: `tests/math.test.ts`
+**Archivo**: `tests/math.test.ts`  
 **Ejecutar**: `npm test` o `jest`
 
 ```javascript
@@ -21,7 +21,7 @@ describe("sum", () => {
 
 ## Python (unittest)
 
-**Archivo**: `tests/factorial_unittest.py`
+**Archivo**: `tests/factorial_unittest.py`  
 **Ejecutar**: `python -m unittest discover -s tests`
 
 ```python
@@ -38,8 +38,8 @@ class TestFactorial(unittest.TestCase):
 
 ## Python (pytest)
 
-**Archivo**: `tests/factorial_pytest.py`
-**Ejecutar**: `pytest tests/factorial_pytest.py -v`
+**Archivo**: `tests/factorial_pytest.py`  
+**Ejecutar**: `pytest tests/ -v`
 
 ```python
 import pytest
@@ -53,53 +53,21 @@ def test_factorial_zero():
 
 ## Java (JUnit)
 
-**Archivo**: `tests/factorial.test.java`
-**Ejecutar**: `mvn test` o desde IDE
+**Archivo**: `tests/factorial.test.java`  
+**Ejecutar**:
 
-```java
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+- Desde VSCode con la extensión Java instalada.
+- O manualmente desde CMD (tras configurar PATH para javac y java):
 
-public class FactorialTest {
-    @Test // Anotación que indica método de prueba
-    public void testFactorialZero() {
-        assertEquals(1, Factorial.factorial(0));
-    }
-}
+```bash
+javac -d bin -cp ".;path/to/junit.jar" utils/factorial.java tests/factorial.test.java
+java -cp ".;bin;path/to/junit.jar" org.junit.runner.JUnitCore FactorialTest
 ```
 
-## C# (xUnit)
+## C# (xUnit y MSTest)
 
-**Archivo**: `FactorialTests_xunit.cs`
-**Ejecutar**: `dotnet test`
-
-```csharp
-using Xunit;
-
-public class FactorialTests_xunit {
-    [Fact] // Atributo para métodos de prueba
-    public void TestFactorialZero() {
-        Assert.Equal(1, Factorial.Calculate(0));
-    }
-}
-```
-
-## C# (MSTest)
-
-**Archivo**: `FactorialTests_mstest.cs`
-**Ejecutar**: `dotnet test`
-
-```csharp
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-[TestClass] // Atributo para clases de prueba
-public class FactorialTests_mstest {
-    [TestMethod] // Atributo para métodos de prueba
-    public void TestFactorialZero() {
-        Assert.AreEqual(1, Factorial.Calculate(0));
-    }
-}
-```
+**Archivos**: `FactorialTests_xunit.cs`, `FactorialTests_mstest.cs`  
+**Ejecutar**: `dotnet test` (requiere instalación de .NET SDK)
 
 ## Comandos de Ejecución
 
@@ -113,29 +81,27 @@ python -m unittest discover -s tests
 pytest tests/ -v
 ```
 
-### Java
-
-```bash
-# Con Maven
-mvn test
-
-# Compilación manual
-javac -d bin utils/*.java tests/*.java
-java -cp "bin;path/to/junit.jar" org.junit.runner.JUnitCore FactorialTest
-```
-
-### C#
-
-```bash
-dotnet test
-```
-
 ### JavaScript/TypeScript
 
 ```bash
 npm test
 # o
 jest
+```
+
+### Java
+
+```bash
+# Desde VSCode con extensión Java
+# O manualmente:
+javac -d bin -cp ".;path/to/junit.jar" utils/factorial.java tests/factorial.test.java
+java -cp ".;bin;path/to/junit.jar" org.junit.runner.JUnitCore FactorialTest
+```
+
+### C#
+
+```bash
+dotnet test
 ```
 
 ## Estructura AAA (Arrange-Act-Assert)

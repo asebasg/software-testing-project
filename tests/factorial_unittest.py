@@ -1,4 +1,6 @@
 import unittest
+import sys
+sys.path.append('.')
 from utils.factorial import factorial
 
 class TestFactorial(unittest.TestCase):
