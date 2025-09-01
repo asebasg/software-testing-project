@@ -1,3 +1,4 @@
 /.qodo
 /node_modules
 /.vscode
+/.pytest_cache
