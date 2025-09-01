@@ -1,4 +1,8 @@
 /.qodo
 /node_modules
 /.vscode
+<<<<<<< HEAD
 /.pytest_cache
+=======
+/.pytest_cache
+>>>>>>> 19d4504ce517db74150790bfa43d55c260e8aa74
